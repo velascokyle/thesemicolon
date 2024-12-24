@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Semicolon Co - Join the Waitlist</title>
+    <!-- Google Fonts for Alice -->
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Instagram Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #434343); /* Black Gradient Background */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            padding-top: 80px; /* Adjust padding for header space */
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure the header stays on top */
+            display: flex;
+            justify-content: center; /* Center the content */
+            align-items: center;
+        }
+
+        .header-content {
+            display: flex;
+            width: 100%;
+            max-width: 1200px; /* Control max width of the header */
+            align-items: center;
+        }
+
+        .instagram-logo {
+            font-size: 2.5em;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: absolute;
+            left: 20px; /* Position the Instagram logo on the left */
+        }
+
+        header h1 {
+            font-family: 'Alice', serif;
+            font-size: 2.5em;
+            color: #333;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1; /* Ensures the brand name stays centered */
+        }
+
+        /* Instagram Logo Hover Effect */
+        .instagram-logo:hover {
+            color: #ff6b6b; /* Change color when hovered */
+        }
+
+        /* Container for the form */
+        .container {
+            background-color: white; /* White background for the form box */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            font-family: 'Alice', serif; /* Elegant font for the form */
+            margin-top: 100px; /* Ensures there's space for the header */
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        /* Focus on input fields to match dark theme */
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #000000; /* Focus effect color is black */
+            box-shadow: 0 0 5px #000000; /* Adding a subtle shadow effect on focus */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #434343; /* Matching button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+
+        button:hover {
+            background-color: #000000; /* Button hover effect - dark color */
+        }
+
+        #confirmationMessage {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #242424;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Instagram Logo on the left and Company Name in the center -->
+    <header>
+        <div class="header-content">
+            <a href="https://www.instagram.com/thesemicolonco/" class="instagram-logo" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <h1>The Semicolon Company</h1>
+        </div>
+    </header>
+
+    <!-- Waitlist Form Container -->
+    <div class="container">
+        <h2>Join the Waitlist</h2>
+        <p>Be the first to know when we launch!</p>
+        <form id="waitlistForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit">Join Waitlist</button>
+        </form>
+        <p id="confirmationMessage"></p>
+    </div>
+
+    <script>
+        // Handle form submission and show confirmation message
+        document.getElementById('waitlistForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Normally, here we would send the data to the backend (e.g., via an AJAX request)
+            // For now, we'll display a confirmation message to the user
+            document.getElementById('confirmationMessage').textContent = 
+                `Thank you, ${name}! You've been added to the waitlist. We will send a confirmation email to ${email}.`;
+
+            // Clear the form
+            document.getElementById('waitlistForm').reset();
+        });
+    </script>
+
+</body>
+</html>
