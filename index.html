@@ -130,16 +130,53 @@
         #confirmationMessage {
             margin-top: 20px;
             font-size: 1.2em;
-            color: #242424;
+            color: #28a745;
         }
 
         /* Responsive Design */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2em; /* Adjust header font size for smaller screens */
             }
+
             .container {
                 padding: 20px;
+            }
+
+            .instagram-logo {
+                font-size: 2em; /* Smaller Instagram icon on mobile */
+            }
+
+            button {
+                font-size: 1em; /* Adjust button text size */
+                padding: 12px; /* Smaller button size */
+            }
+
+            input[type="text"], input[type="email"] {
+                font-size: 1.1em; /* Increase input text size for easier reading */
+            }
+
+            h2 {
+                font-size: 2em; /* Smaller title font size for mobile */
+            }
+
+            p {
+                font-size: 1em; /* Adjust paragraph font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 90%; /* Make the container take up more width on very small screens */
+                padding: 15px;
+            }
+
+            .instagram-logo {
+                font-size: 1.8em; /* Even smaller Instagram icon on very small screens */
+            }
+
+            header h1 {
+                font-size: 1.8em; /* Adjust header font size even further for tiny screens */
             }
         }
     </style>
@@ -152,7 +189,7 @@
             <a href="https://www.instagram.com/thesemicolonco/" class="instagram-logo" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
-            <h1>The Semicolon Company</h1>
+            <h1>The Semicolon Co</h1>
         </div>
     </header>
 
