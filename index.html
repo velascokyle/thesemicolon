@@ -128,6 +128,7 @@
             margin-top: 20px;
             font-size: 1.2em;
             color: #28a745;
+            display: none;
         }
 
         /* Responsive Design */
@@ -194,40 +195,13 @@
     <div class="container">
         <h2>Join the Waitlist</h2>
         <p>Be the first to know when we launch!</p>
-        <form action="https://formspree.io/f/xovvvvae" method="POST" id="waitlistForm">
+        <form action="https://formspree.io/f/xovvvvae" method="POST">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <!-- Removed the _next field -->
             <button type="submit">Join Waitlist</button>
         </form>
-        <p id="confirmationMessage" style="display:none;">Thank you for joining the waitlist! We will be in touch soon.</p>
+        <p id="confirmationMessage">Thank you! You've been added to the waitlist.</p>
     </div>
-
-    <script>
-        // Handle form submission with success message
-        const form = document.getElementById('waitlistForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Submit form via Fetch API to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success message
-                    document.getElementById('confirmationMessage').style.display = 'block';
-                    form.reset(); // Clear the form fields
-                } else {
-                    alert("There was a problem with your submission. Please try again.");
-                }
-            })
-            .catch(() => {
-                alert("There was a problem with your submission. Please try again.");
-            });
-        });
-    </script>
 
 </body>
 </html>
